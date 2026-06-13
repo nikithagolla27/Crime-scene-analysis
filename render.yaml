@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: crimesolver-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+    disk:
+      name: crimesolver-data
+      mountPath: /app/backend/uploads
+      sizeGB: 5

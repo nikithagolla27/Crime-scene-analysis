@@ -1,0 +1,93 @@
+.detail-page { padding-bottom: 40px; }
+.detail-loading, .detail-not-found {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; padding: 80px; color: var(--text-secondary);
+  flex-direction: column;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text-secondary); text-decoration: none;
+  font-size: 13px; margin-bottom: 16px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent); }
+.detail-title-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 24px;
+}
+.detail-case-id { font-family: var(--font-mono); font-size: 32px; color: var(--accent); font-weight: 700; }
+.detail-filename { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* Threat banner */
+.threat-banner {
+  grid-column: 1 / -1;
+  display: flex; justify-content: space-between; align-items: center;
+  border-left: 4px solid;
+}
+.threat-banner.threat-critical { border-color: var(--red);    background: var(--red-dim); }
+.threat-banner.threat-high     { border-color: var(--orange); background: var(--orange-dim); }
+.threat-banner.threat-moderate { border-color: var(--yellow); background: var(--yellow-dim); }
+.threat-banner.threat-low      { border-color: var(--accent); background: var(--green-dim); }
+.threat-banner-left { display: flex; align-items: center; gap: 14px; }
+.threat-banner.threat-critical .threat-banner-left { color: var(--red); }
+.threat-banner.threat-high     .threat-banner-left { color: var(--orange); }
+.threat-banner.threat-moderate .threat-banner-left { color: var(--yellow); }
+.threat-banner.threat-low      .threat-banner-left { color: var(--accent); }
+.threat-banner-level { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+.threat-banner-sub   { font-size: 12px; opacity: 0.7; }
+.threat-banner-score { font-family: var(--font-mono); font-size: 40px; font-weight: 700; opacity: 0.4; }
+
+/* Classification */
+.detail-cls { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.cls-conf-detail { font-size: 13px; color: var(--text-secondary); }
+.detail-description { font-size: 13px; line-height: 1.7; color: var(--text-secondary); }
+
+/* Detections */
+.det-list-detail { display: flex; flex-direction: column; gap: 8px; }
+.det-row-detail {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: var(--radius);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+}
+.det-row-detail.danger { border-color: rgba(255,59,59,0.3); background: var(--red-dim); }
+.det-dot-detail { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.det-dot-detail.red   { background: var(--red); }
+.det-dot-detail.green { background: var(--accent); }
+.det-name-detail { font-family: var(--font-display); font-size: 14px; font-weight: 600; text-transform: capitalize; min-width: 60px; }
+.det-dangerous-tag { font-family: var(--font-mono); font-size: 9px; color: var(--red); letter-spacing: 1px; padding: 2px 6px; border: 1px solid var(--red-dim); border-radius: 4px; }
+.det-conf-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.det-conf-fill { height: 100%; border-radius: 2px; transition: width 0.5s; }
+.det-conf-text { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 30px; text-align: right; }
+.empty-det { font-size: 13px; color: var(--text-muted); }
+
+/* Validation */
+.val-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.val-badge-detail {
+  padding: 8px 12px; border-radius: var(--radius);
+  font-size: 12px; font-weight: 600; text-align: center;
+  border: 1px solid var(--border);
+}
+.val-badge-detail.ok   { background: var(--green-dim);  color: var(--accent); border-color: var(--accent-border); }
+.val-badge-detail.fail { background: var(--red-dim);    color: var(--red); }
+.val-badge-detail.warn { background: var(--orange-dim); color: var(--orange); }
+.ela-detail { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+.ela-note   { color: var(--text-muted); margin-left: 8px; font-size: 11px; }
+.img-meta-detail { display: flex; gap: 16px; flex-wrap: wrap; }
+.img-meta-detail span { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+.hash-text { overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+
+/* Metadata */
+.meta-list { display: flex; flex-direction: column; gap: 8px; }
+.meta-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.meta-item:last-child { border-bottom: none; }
+.meta-key   { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+.meta-value { font-size: 13px; color: var(--text-primary); }
+.meta-value.mono { font-family: var(--font-mono); color: var(--accent); }
+.color-red { color: var(--red) !important; }
+
+@media (max-width: 768px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .threat-banner { grid-column: 1; }
+}

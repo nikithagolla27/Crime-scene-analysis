@@ -1,0 +1,18 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# Downgraded to 2.5.1 and forced CPU-only to fix YOLO and save 2GB of space
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+
+ultralytics==8.2.0
+
+opencv-python-headless==4.9.0.80
+
+Pillow==10.3.0
+numpy==1.26.4
+
+reportlab==4.2.0

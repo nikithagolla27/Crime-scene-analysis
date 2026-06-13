@@ -1,0 +1,74 @@
+.navbar {
+  background: rgba(8,12,16,0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 100;
+}
+.navbar-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 24px; height: 60px;
+  display: flex; align-items: center; gap: 32px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700;
+  color: var(--text-primary); letter-spacing: 1px;
+}
+.logo-accent { color: var(--accent); }
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 9px; color: var(--text-muted);
+  letter-spacing: 2px; margin-top: 2px;
+}
+
+/* Links */
+.navbar-links { display: flex; gap: 4px; flex: 1; }
+.nav-link {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--radius);
+  text-decoration: none; color: var(--text-secondary);
+  font-family: var(--font-display); font-size: 14px; font-weight: 600;
+  letter-spacing: 0.5px; transition: all 0.2s;
+}
+.nav-link:hover { color: var(--text-primary); background: var(--bg-hover); }
+.nav-link.active { color: var(--accent); background: var(--accent-dim); }
+
+/* Status */
+.api-status {
+  display: flex; align-items: center; gap: 7px;
+  padding: 5px 12px; border-radius: 20px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.api-status.online  { border-color: var(--accent-border); }
+.api-status.offline { border-color: var(--red-dim); }
+
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text-muted);
+}
+.api-status.online  .status-dot { background: var(--accent); animation: pulse 2s infinite; }
+.api-status.offline .status-dot { background: var(--red); }
+
+.status-text {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 1.5px;
+  color: var(--text-secondary);
+}
+.api-status.online  .status-text { color: var(--accent); }
+.api-status.offline .status-text { color: var(--red); }
